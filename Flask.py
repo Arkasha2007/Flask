@@ -8,32 +8,6 @@ def index():
     return '<h1>И на Марсе будут яблони цвести!<h1>'
 
 
-@app.route('/')
-def main():
-    return '<h1>Миссия Колонизация Марса<h1>'
-
-
-# @app.route('/promotion')
-# def result():
-#     results = ['Человечество вырастает из детства.',
-#                'Человечеству мала одна планета.',
-#                'Мы сделаем обитаемыми безжизненные пока планеты.',
-#                'И начнем с Марса!',
-#                'Присоединяйся!']
-#     return '''<!DOCTYPE html>
-#             <html lang="en">
-#             <head>
-#                 <meta charset="UTF-8">
-#                 <title>Title</title>
-#             </head>
-#             <body>
-#                 <h3>{}</h3>
-#                 <h3>{}</h3>
-#                 <h3>{}</h3>
-#                 <h3>{}</h3>
-#                 <h3>{}</h3>
-#             </body>
-#             </html>'''.format(*results)
 
 
 @app.route('/sample_page')
@@ -74,27 +48,6 @@ def return_sample_page():
                   </body>
                 </html>"""
 
-
-# @app.route('/bootstrap_sample')
-# def bootstrap():
-#     return '''<!doctype html>
-#                 <html lang="en">
-#                   <head>
-#                     <meta charset="utf-8">
-#                     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-#                     <link rel="stylesheet"
-#                     href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-#                     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-#                     crossorigin="anonymous">
-#                     <title>Привет, Яндекс!</title>
-#                   </head>
-#                   <body>
-#                     <h1>Привет, Яндекс!</h1>
-#                     <div class="alert alert-primary" role="alert">
-#                       А мы тут компонентами Bootstrap балуемся
-#                     </div>
-#                   </body>
-#                 </html>'''
 
 
 if __name__ == '__main__':
