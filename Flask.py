@@ -10,7 +10,7 @@ def index():
 
 
 
-@app.route('/sample_page')
+@app.route('/promotion_image')
 def return_sample_page():
     results = ['Человечество вырастает из детства.',
                'Человечеству мала одна планета.',
