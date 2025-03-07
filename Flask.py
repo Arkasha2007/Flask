@@ -34,7 +34,7 @@ def return_sample_page():
                         <h3>{results[0]}</h3>
                     </div>
                      <div class="alert alert-success" role="alert">
-                        <h3>{'Бездельник'}</h3>
+                        <h3>{results[1]}</h3>
                     </div>
                     <div class="alert alert-dark" role="alert">
                         <h3>{results[2]}</h3>
