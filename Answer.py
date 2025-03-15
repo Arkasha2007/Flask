@@ -1,43 +1,83 @@
-from flask import Flask, url_for
+from flask import Flask, url_for, request
 
 app = Flask(__name__)
 
 
-@app.route('/carousel')
+@app.route('/form_sample', methods=['POST', 'GET'])
 def form_sample():
-    return f'''<!doctype html>
+    if request.method == 'GET':
+        return f'''<!doctype html>
                         <html lang="en">
                           <head>
                             <meta charset="utf-8">
                             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-                            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-                            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-                            <title>Пейзажи Марса</title>
+                            <link rel="stylesheet"
+                            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+                            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+                            crossorigin="anonymous">
+                            <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/style.css')}"/>
+                            <title>Отбор астронавтов</title>
                           </head>
                           <body>
-                              <div id="carouselExample" class="carousel slide">
-                                  <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                      <img src="{url_for('static', filename='img/Mars_foto_1.jpg')}" class="d-block w-100" alt="...">
+                            <h1 align="center">Агента претендента</h1>
+                            <h3 align="center"> на участие в миссии</h3>
+                            <div>
+                                <form  class="login_form" method="post">
+                                    <input type="text" class="form-control" id="text" aria-describedby="emailHelp" placeholder="Введите фамилию" name="text">
+                                    <input type="text" class="form-control" id="text_2" placeholder="Введите имя" name="text">
+                                    <div class="text-block">  
+                                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Введите адрес почты" name="email"> 
                                     </div>
-                                    <div class="carousel-item">
-                                      <img src="{url_for('static', filename='img/Mars_foto_2.jpg')}" class="d-block w-100" alt="...">
+                                    <div class="text-block2"> 
+                                    <label>Какое у Вас образование?</label>
                                     </div>
-                                    <div class="carousel-item">
-                                      <img src="{url_for('static', filename='img/Mars_foto_3.jpg')}" class="d-block w-100" alt="...">
+                                    <div class="sub-title"> 
+                                    <select class='box' name="student_courses">
+                                        <option value="Начальное">Начальное</option>
+                                        <option value="Среднее">Среднее</option>
+                                        <option value="Высшее">Высшее</option>
+                                    </select>
                                     </div>
-                                  </div>
-                                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                  </button>
-                                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                  </button>
-                              </div>
+                                    <div class="text-block3">
+                                    <label>Какие у Вас есть профессии?</label>
+                                    </div>
+                                    <input type="checkbox" id="engineering" value="interest_engineering" name="user_interest"><label class="light" for="engineering">Инженер-исследователь</label><br>
+                                    <input type="checkbox" id="engineering" value="interest_engineering" name="user_interest"><label class="light" for="engineering">Пилот</label><br>
+                                    <input type="checkbox" id="engineering" value="interest_engineering" name="user_interest"><label class="light" for="engineering">Строитель</label><br>
+                                    <input type="checkbox" id="engineering" value="interest_engineering" name="user_interest"><label class="light" for="engineering">Экзобиолог</label><br>
+                                    <input type="checkbox" id="engineering" value="interest_engineering" name="user_interest"><label class="light" for="engineering">Врач</label><br>
+                                    <input type="checkbox" id="engineering" value="interest_engineering" name="user_interest"><label class="light" for="engineering">Инженер по терраформированию</label><br>
+                                    <input type="checkbox" id="engineering" value="interest_engineering" name="user_interest"><label class="light" for="engineering">Метеоролог</label><br>
+                                    <input type="checkbox" id="engineering" value="interest_engineering" name="user_interest"><label class="light" for="engineering">Киберинженер</label><br>
+                                    <input type="checkbox" id="engineering" value="interest_engineering" name="user_interest"><label class="light" for="engineering">Пилот дронов</label><br>
+                                    <div class="text-block3">
+                                    <label>Укажите пол</label>
+                                    </div>
+                                    <input type="radio" id="under_16" value="under_16" name="user_age"><label for="under_16" class="light">Мужской</label><br>
+                                    <input type="radio" id="over_16" value="over_16" name="user_age"><label for="over_16" class="light">Женский</label><br>
+                                    <div class="text-block3">
+                                    <label>Почему вы хотите принять участие в миссии?</label>
+                                    </div>
+                                    <textarea class="size-fields" id="bio" name="student_bio"></textarea>
+                                    <div class="form-group">
+                                        <label for="photo">Приложите фотографию</label>
+                                        <input type="file" class="form-control-file" id="photo" name="file">
+                                    </div>
+                                    <input class="text-block3" type="checkbox" id="engineering" value="interest_engineering" name="user_interest"><label class="light" for="engineering">Готовы остаться на Марсе?</label><br>
+                                    <button type="submit" class="btn btn-primary">Отправить</button>
+                                </form>
+                            </div>
                           </body>
                         </html>'''
+    elif request.method == 'POST':
+        print(request.form['email'])
+        print(request.form['password'])
+        print(request.form['class'])
+        print(request.form['file'])
+        print(request.form['about'])
+        print(request.form['accept'])
+        print(request.form['sex'])
+        return "Форма отправлена"
 
 
 if __name__ == '__main__':
