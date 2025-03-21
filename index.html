@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if 'инженер' in username or 'строитель' in username %}
+        <div> '''<img src="/static/img/First_foto.jpg" alt="здесь должна была быть картинка, но не нашлась">''' </div>
+    {% else %}
+       <div> '''<img src="/static/img/Twise_foto.jpg" alt="здесь должна была быть картинка, но не нашлась">''' </div>
+    {% endif %}
+{% endblock %}
