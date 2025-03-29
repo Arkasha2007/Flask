@@ -7,23 +7,47 @@
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous">
-    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/style.css')}"/>
+    <title> Ответ </title>
+    <style type="text/css">
+        body { margin: 0; }
+        #sidebar, #content { position: absolute; }
+        #sidebar, #content { overflow: auto; padding: 10px; }
+        #header {
+         text-align:left;
+         height: 30px; /* Высота слоя */
+         background: #FEDFC0; border-bottom: 2px solid #7B5427;
+        }
+        #header h1 { padding: 40px; margin: 0; }
+        #sidebar {
+         width: 150px; background: #ECF5E4; border-right: 1px solid #231F20;
+         top: 82px; /* Расстояние от верхнего края */
+         bottom: 0; /* Расстояние снизу  */
+        }
+        #content {
+         top: 82px; /* Расстояние от верхнего края */
+         left: 170px; /* Расстояние от левого края */
+         bottom: 0; right: 0;
+        }
+    </style>
 </head>
 <body>
 <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Миссия Колонизация Марса</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-      <form class="d-flex" role="search">
-          <button class="btn btn-outline-success" type="submit">Marc one</button>
-      </form>
-    </div>
-  </div>
-</nav>
-<h2> И на Марсе будут яблони цвести! </h2>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Миссия Колонизация Марса</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <form class="d-flex" role="search">
+                <button class="btn btn-outline-success" type="submit">Marc one</button>
+            </form>
+        </div>
+        </div>
+    </nav>
+    <h2> И на Марсе будут яблони цвести! </h2>
 </header>
 <!-- Begin page content -->
 <main role="main" class="container">

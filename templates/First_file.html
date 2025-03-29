@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Отбор астронавтов</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha512-Dop/vW3iOtayerlYAqCgkVr2aTr2ErwwTYOvRFUpzl2VhCMJyjQF0Q9TjUXIo6JhuM/3i0vVEt2e/7QQmnHQqw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha512-iy8EXLW01a00b26BaqJWaCmk9fJ4PsMdgNRqV96KwMPSH+blO82OHzisF/zQbRIIi8m0PiO10dpS0QxrcXsisw==" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha512-oBTprMeNEKCnqfuqKd6sbvFzmFQtlXS3e0C/RGFV0hD6QzhHV+ODfaQbAlmY6/q0ubbwlAM/nCJjkrgA3waLzg==" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form class="login_form" method="post" action="{{ url_for('answer') }}">
+        <input type="text" class="form-control" name="surname" id="surname" aria-describedby="emailHelp" placeholder="Введите фамилию">
+        <input type="text" class="form-control" name="name" id="name" placeholder="Введите имя">
+        <div class="text-block">
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                       placeholder="Введите адрес почты" name="email">
+        </div>
+        <div class="text-block2">
+            <label>Какое у Вас образование?</label>
+        </div>
+        <div class="sub-title">
+                <select class='box' name="student_courses">
+                    <option value="Начальное">Начальное</option>
+                    <option value="Среднее">Среднее</option>
+                    <option value="Высшее">Высшее</option>
+                </select>
+        </div>
+        <div class="text-block3">
+            <label>Какие у Вас есть профессии?</label>
+        </div>
+        <input type="checkbox" id="Research Engineer" value="Инженер-исследователь" name="user_profession"><label class="light"
+                                                                                                               for="engineering">Инженер-исследователь</label><br>
+        <input type="checkbox" id="user_interest_2" value="Пилот" name="user_profession"><label class="light"
+                                                                                                                   for="engineering">Пилот</label><br>
+        <input type="checkbox" id="user_interest_3" value="Строитель" name="user_profession"><label class="light"
+                                                                                                                   for="engineering">Строитель</label><br>
+        <input type="checkbox" id="user_interest_4" value="Экзобиолог" name="user_profession"><label class="light"
+                                                                                                                   for="engineering">Экзобиолог</label><br>
+        <input type="checkbox" id="user_interest_5" value="Врач" name="user_profession"><label class="light"
+                                                                                                                   for="engineering">Врач</label><br>
+        <input type="checkbox" id="user_interest_6" value="Инженер по терраформированию" name="user_profession"><label class="light"
+                                                                                                                   for="engineering">Инженер по терраформированию</label><br>
+        <input type="checkbox" id="user_interest_7" value="Метеоролог" name="user_profession"><label class="light"
+                                                                                                                   for="engineering">Метеоролог</label><br>
+        <input type="checkbox" id="user_interest_8" value="Киберинженер" name="user_profession"><label class="light"
+                                                                                                                   for="engineering">Киберинженер</label><br>
+        <input type="checkbox" id="user_interest_9" value="Пилот дронов" name="user_profession"><label class="light"
+                                                                                                                   for="engineering">Пилот дронов</label><br>
+        <div class="text-block3">
+                <label>Укажите пол</label>
+        </div>
+        <input type="radio" id="Мужской" value="Мужской" name="user_age"><label for="Мужской"
+                                                                                      class="light">Мужской</label><br>
+        <input type="radio" id="Женский" value="Женский" name="user_age"><label for="Женский"
+                                                                                    class="light">Женский</label><br>
+        <div class="text-block3">
+                <label>Почему вы хотите принять участие в миссии?</label>
+        </div>
+        <textarea class="size-fields" id="bio" name="student_bio"></textarea>
+        <div class="form-group">
+            <label for="photo">Приложите фотографию</label>
+            <input type="file" class="form-control-file" id="photo" name="file">
+        </div>
+        <input class="text-block3" type="checkbox" id="approval" value="True" name="approval"><label
+            class="light" for="approval">Готовы остаться на Марсе?</label><br>
+        <button>Отправить</button>
+    </form>
+
+</body>
+</html>

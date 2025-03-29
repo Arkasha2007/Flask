@@ -1,9 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% if 'инженер' in username or 'строитель' in username %}
-        <div> '''<img src="/static/img/First_foto.jpg" alt="здесь должна была быть картинка, но не нашлась">''' </div>
-    {% else %}
-       <div> '''<img src="/static/img/Twise_foto.jpg" alt="здесь должна была быть картинка, но не нашлась">''' </div>
-    {% endif %}
+<div id="header h1">
+    Фамилия: {{ say }}
+</div>
+<div> Имя: {{ title }}</div>
+<div> Образование: {{ education }}</div>
+<div> Профессия: {{ profession }}</div>
+<div> Пол: {{ sex }}</div>
+<div> Мотивация: {{ motivation }}</div>
+<div> Готовы остаться на Марсе? {{ ready }}</div>
+
 {% endblock %}
