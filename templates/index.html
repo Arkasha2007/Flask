@@ -1,14 +1,28 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div id="header h1">
-    Фамилия: {{ say }}
-</div>
-<div> Имя: {{ title }}</div>
-<div> Образование: {{ education }}</div>
-<div> Профессия: {{ profession }}</div>
-<div> Пол: {{ sex }}</div>
-<div> Мотивация: {{ motivation }}</div>
-<div> Готовы остаться на Марсе? {{ ready }}</div>
+
+    <h2 align="center">Журнал работ</h2>
+        {% for job in jobs %}
+            <h3>Работа № {{ job.id }}</h3>
+            <div class="table_container my_container">
+                <table class="table">
+                    <tr class="work_table_row">
+                        <td class="title" width="400px" align="center"> Название работы</td>
+                        <td class="title" width="150px" align="center"> Лидер</td>
+                        <td class="title" width="100px" align="center"> Временной промежуток</td>
+                        <td class="title" width="200px" align="center"> Список авторов</td>
+                        <td class="title" width="100px" align="center"> Признак завершения</td>
+                    </tr>
+                    <tr>
+                        <td class="description" align="center"> {{ job.job }} </td>
+                        <td class="description" align="center"> {{ job.team_leader }} </td>
+                        <td class="description" align="center"> {{ job.work_size }} </td>
+                        <td class="description" align="center"> {{ job.collaborators }} </td>
+                        <td class="description" align="center"> {{ job.is_finished }} </td>
+                    </tr>
+                </table>
+            </div>
+        {% endfor %}
 
 {% endblock %}
